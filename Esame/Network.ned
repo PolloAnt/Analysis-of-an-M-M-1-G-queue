@@ -42,7 +42,7 @@ network Network
         }
     connections:
         source.out --> router.in++;
-        
+
         for i=0..numberOfServers-1 {
             router.out++ --> queues[i].in++;
             queues[i].out --> sink.in++;
