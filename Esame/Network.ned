@@ -1,4 +1,7 @@
+import org.omnetpp.queueing.Router;
+import org.omnetpp.queueing.Sink;
 import org.omnetpp.queueing.Source;
+import org.omnetpp.queueing.Queue;
 
 
 //
@@ -20,10 +23,29 @@ import org.omnetpp.queueing.Source;
 //
 network Network
 {
-    @display("bgb=593,306");
+    parameters:
+        int numberOfServers @display("bgb=593,306") = default(1);
+        @display("bgb=491,414");
     submodules:
         source: Source {
-            @display("p=56,133");
+            @display("p=28,32");
+        }
+        router: Router {
+            @display("p=207,32");
+        }
+        queues[nunmberOfServers]: Queue {
+            @display("p=333,160,c");
+        }
+
+        sink: Sink {
+            @display("p=208,318");
+        }
+    connections:
+        source.out --> router.in++;
+        
+        for i=0..numberOfServers-1 {
+            router.out++ --> queues[i].in++;
+            queues[i].out --> sink.in++;
         }
 }
 
