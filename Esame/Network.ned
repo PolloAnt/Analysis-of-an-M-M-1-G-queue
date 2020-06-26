@@ -34,7 +34,7 @@ network Network
             @display("p=207,32");
         }
         queues[nunmberOfServers]: Queue {
-            @display("p=333,160,c");
+            @display("p=356,160,c");
         }
 
         sink: Sink {
@@ -42,10 +42,11 @@ network Network
         }
     connections:
         source.out --> router.in++;
-
+        router.out++ --> sink.in++;
         for i=0..numberOfServers-1 {
             router.out++ --> queues[i].in++;
             queues[i].out --> sink.in++;
         }
+
 }
 
