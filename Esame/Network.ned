@@ -33,7 +33,7 @@ network Network
         router: Router {
             @display("p=207,32");
         }
-        queues[nunmberOfServers]: Queue {
+        queues[numberOfServers]: Queue {
             @display("p=356,160,c");
         }
 

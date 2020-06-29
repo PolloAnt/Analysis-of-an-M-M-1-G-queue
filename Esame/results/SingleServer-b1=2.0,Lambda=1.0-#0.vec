@@ -1,0 +1,29 @@
+version 2
+run SingleServer-0-20200627-20:08:18-8688
+attr configname SingleServer
+attr datetime 20200627-20:08:18
+attr experiment SingleServer
+attr inifile configuration.ini
+attr iterationvars "$b1=2.0, $Lambda=1.0"
+attr iterationvarsf b1=2.0,Lambda=1.0-
+attr measurement "$b1=2.0, $Lambda=1.0"
+attr network Network
+attr processid 8688
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+itervar Lambda 1.0
+itervar b1 2.0
+param **.source.jobDeadline "uniform(0.5, 2.0s)"
+param *.queues[0].serviceTime exponential(0.33s)
+param **.source.interArrivalTime exponential(1.0s)
+param **.source.startTime 0s
+param **.router.routingAlgorithm "\"exactAdmissionControl\""
+
+vector 0 Network.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+0	0	0	0
+
