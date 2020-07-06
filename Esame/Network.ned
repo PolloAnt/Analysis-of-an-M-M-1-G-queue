@@ -1,7 +1,7 @@
-import org.omnetpp.queueing.Router;
-import org.omnetpp.queueing.Sink;
-import org.omnetpp.queueing.Source;
-import org.omnetpp.queueing.Queue;
+import queueinglib.Router;
+import queueinglib.Sink;
+import queueinglib.Source;
+import queueinglib.Queue;
 
 
 //
@@ -30,6 +30,7 @@ network Network
         source: Source {
             @display("p=28,32");
         }
+        
         router: Router {
             @display("p=207,32");
         }
