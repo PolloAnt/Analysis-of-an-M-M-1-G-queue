@@ -1,4 +1,4 @@
-Classi di queueing lib modificate:
+Classi di queueinglib modificate:
 
 _Source.ned e Source.cc --> Parametro per la gestione della deadline
 _Job.msg (che genera automaticamente Job_m.h e Job_m.cc) --> Parametro per la gestione della deadline e tempo di servizio

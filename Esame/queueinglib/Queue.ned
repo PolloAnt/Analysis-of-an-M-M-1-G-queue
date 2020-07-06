@@ -33,7 +33,7 @@ simple Queue
 		//CUSTOM//
         int capacity = default(-1);    // negative capacity means unlimited queue
         bool fifo = default(true);     // whether the module works as a queue (fifo=true) or a stack (fifo=false)
-        volatile double serviceTime @unit(s);
+        volatile double serviceTime @unit(s) = default(0s);
     gates:
         input in[];
         output out;
